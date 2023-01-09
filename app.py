@@ -141,4 +141,8 @@ x=data.loc[:,data.columns!="Price"]
 y=data["Price"]
 
 
+from sklearn.ensemble import RandomForestRegressor
+model = RandomForestRegressor(max_depth=2, n_estimators=200)
+model.fit(x, y)
+
 
