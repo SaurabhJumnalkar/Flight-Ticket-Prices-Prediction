@@ -142,7 +142,23 @@ y=data["Price"]
 
 
 from sklearn.ensemble import RandomForestRegressor
-model = RandomForestRegressor(max_depth=2, n_estimators=200)
+model = RandomForestRegressor()
 model.fit(x, y)
+
+data_c = pd.read_excel("FlightFare_Dataset.xlsx")
+data_c.iloc[937:938,:]
+
+
+import joblib
+joblib.dump(model, 'model.pkl')
+
+first_half_columns= data_c.columns[:4]
+joblib.dump(first_half_columns, 'first_half_columns.pkl')
+
+sec_half_columns=x.columns[-8:]
+joblib.dump(sec_half_columns, 'sec_half_columns.pkl')
+
+all_cols=x.columns[:25]
+joblib.dump(all_cols, 'all_cols.pkl')
 
 
