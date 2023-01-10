@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import metrics
 import seaborn as sns
-%matplotlib inline
+
 import warnings
 warnings.filterwarnings("ignore")
 
