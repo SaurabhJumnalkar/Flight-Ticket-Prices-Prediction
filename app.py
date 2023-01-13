@@ -27,21 +27,6 @@ print("model added.")
 app=Flask(__name__)
 
 
-# def dayy(date):
-#     dat=[]
-#     a= pd.to_datetime(date, format= "%d-%m-%Y").day
-#     b= pd.to_datetime(date, format= "%d-%m-%Y").month
-#     dat.append(a)
-#     dat.append(b)
-#     return dat
-
-# def timer(tt):
-#     t=[]
-#     c= pd.to_datetime(tt).hour
-#     d= pd.to_datetime(tt).minute
-#     t.append(c)
-#     t.append(d)
-#     return t
 
 @app.route('/')
 def index():
