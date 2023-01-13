@@ -51,21 +51,7 @@ def index():
 
 @app.route("/dashboard" , methods=["GET","POST"])
 
-def dayy(date):
-    dat=[]
-    a= pd.to_datetime(date, format= "%d-%m-%Y").day
-    b= pd.to_datetime(date, format= "%d-%m-%Y").month
-    dat.append(a)
-    dat.append(b)
-    return dat
 
-def timer(tt):
-    t=[]
-    c= pd.to_datetime(tt).hour
-    d= pd.to_datetime(tt).minute
-    t.append(c)
-    t.append(d)
-    return t
 
 
 def predict():
@@ -96,9 +82,10 @@ def predict():
             final= pd.concat([final1,new_input2], axis = 1)
 
             prediction = model.predict(final)
-            return jsonify({"Prediction ": prediction})
+            return jsonify({"Prediction ": str(prediction)})
 
         except:
+            print("fu")
             return jsonify({"trace ": traceback.format_exc()})
 
             
@@ -110,6 +97,22 @@ def predict():
     else:
         # return render_template("login.html")
         return ("no model is here to use")
+
+def dayy(date):
+    dat=[]
+    a= pd.to_datetime(date, format= "%d-%m-%Y").day
+    b= pd.to_datetime(date, format= "%d-%m-%Y").month
+    dat.append(a)
+    dat.append(b)
+    return dat
+
+def timer(tt):
+    t=[]
+    c= pd.to_datetime(tt).hour
+    d= pd.to_datetime(tt).minute
+    t.append(c)
+    t.append(d)
+    return t
 
 
 
