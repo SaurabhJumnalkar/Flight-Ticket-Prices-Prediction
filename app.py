@@ -46,7 +46,7 @@ def predict():
         # data= [str(i) for i in request.form.values()]
             print("model added.")
 
-            tess2 = request.json
+            tess2 = [str(i) for i in request.form.values()]
             f_half = tess2[:4]
             new_input1 = pd.DataFrame(np.array(f_half).reshape(1,-1), columns= first_half_columns)
             new_input1= pd.get_dummies(new_input1)
@@ -68,6 +68,7 @@ def predict():
 
             prediction = model.predict(final)
             return jsonify({"Prediction ": str(prediction)})
+            return render_template('index.html', Pred ="The Price of flight Ticket is {}".format(str(prediction)))
 
         except:
             print("fu")
