@@ -1,18 +1,18 @@
 <h2 class="text-center mt-3 answer">{{Pred}}</h2>
-<form action="" method="post">
+<form action="{{ url_for('predict')}}" method="post">
     <div>
-    <label for="Airline">Airline :</label>
-    <select name="Airline" id="">
-        <option value="Jet Airways">Jet Airways</option>
-        <option value="IndiGo">IndiGo</option>
-        <option value="Air India ">Air India </option>
-        <option value="Multiple carriers">Multiple carriers</option>
-        <option value="SpiceJet">SpiceJet</option>
-        <option value="Vistara">Vistara</option>
-        <option value="Air Asia">Air Asia</option>
-        <option value="GoAir">GoAir</option>
-        <option value="Other">Other</option>
-    </select>
+        <label for="Airline">Airline :</label>
+        <select name="Airline" id="">
+            <option value="Jet Airways">Jet Airways</option>
+            <option value="IndiGo">IndiGo</option>
+            <option value="Air India ">Air India </option>
+            <option value="Multiple carriers">Multiple carriers</option>
+            <option value="SpiceJet">SpiceJet</option>
+            <option value="Vistara">Vistara</option>
+            <option value="Air Asia">Air Asia</option>
+            <option value="GoAir">GoAir</option>
+            <option value="Other">Other</option>
+        </select>
     </div>
 
     <div>
@@ -41,7 +41,7 @@
 
     <div>
         <label for="Total Stops"> Total Stops :</label>
-        <select name="Total Stops" id="">
+        <select name="Total_Stops" id="">
             <option value="1 stop">1 stop</option>
             <option value="2 stops">2 stops</option>
             <option value="3 stops">3 stops</option>
@@ -52,24 +52,23 @@
 
     <div>
         <label for="Journey date">Journey date :</label>
-        <input type="date">
+        <input type="date" name="journeyDate">
     </div>
 
     <div>
         <label for="Departure Time">Departure Time :</label>
-        <input type="time">
+        <input type="time" name="departureTimes">
     </div>
 
     <div>
         <label for="Arrival Time">Arrival Time :</label>
-        <input type="time">
+        <input type="time" name="arrivalTime">
     </div>
 
     <div>
         <label for="Duration Time">Duration Time :</label>
-        <input type="time">
+        <input type="time" name="durationTime">
     </div>
 
     <button class="btn btn-primary mt-3" type="submit"> PREDICT </button>
 </form>
-
