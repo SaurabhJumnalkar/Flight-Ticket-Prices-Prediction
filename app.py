@@ -72,7 +72,7 @@ def predict():
 
             prediction = model.predict(final)
            
-            return render_template('index.html', Pred=str(prediction))
+            return render_template('index.html', Pred="Rs."+str(round(float(prediction),2)))
 
         except:
             #print("fu")
