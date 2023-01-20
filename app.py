@@ -7,11 +7,19 @@ import joblib
 import traceback
 from datetime import datetime
 # from logger.logger import log
+from logger.logger import Logs
+
+
+
+log = Logs("logs.log")
+log.addLog("INFO", "Execution started Successfully !")
+
+
 
 
 model = joblib.load("model.pkl")
 print("model added.")
-# log.addLog("INFO","model loaded")
+log.addLog("INFO","model loaded")
 
 first_half_columns = joblib.load("first_half_columns.pkl")
 print("first added.")
