@@ -27,7 +27,7 @@
     margin-left: 30%;
     margin-right: 30%;
     font-size: 150%;
-    margin-top: 7%;
+    margin-top: 3%;
     text-align: center;
     background-color: #f2f1ed;
   }
@@ -66,6 +66,10 @@
     border-width: 5px;
     padding: 1%;
   }
+  .Head{
+    font-size: 300%;
+    text-align: center;
+  }
 
   img {
     width: 20%;
@@ -93,6 +97,8 @@
   }
 </style>
 <body>
+  <h1 class="Head">Flight Fare Price Predictor</h1>
+  <hr>
   <img src="https://static.vecteezy.com/system/protected/files/001/208/448/vecteezy_airplane_1208448.png" />
   <form action="{{ url_for('predict')}}" method="post">
     <div class="grid-container">
