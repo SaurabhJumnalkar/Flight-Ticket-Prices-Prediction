@@ -71,6 +71,7 @@ data["Duration_minute"]=Duration_minute
 data.drop("Duration", axis=1, inplace=True)
 data.head()
 
+#handling few times counted airlines
 
 data["Airline"].value_counts()
 
